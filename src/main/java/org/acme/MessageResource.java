@@ -18,8 +18,7 @@ public class MessageResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public Response sendMessage(Message message) {
-        producer.sendMessage("Key: " + message.getKey() + ", Value: " + message.getValue());
-        producer.sendMessage1("Key: " + message.getKey() + ", Value: " + message.getValue());
-        return Response.ok("Message sent to Kafka: " + message).build();
+        producer.sendMessage(message);
+        return Response.ok("Message sent: " + message).build();
     }
 }

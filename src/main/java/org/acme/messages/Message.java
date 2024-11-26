@@ -3,32 +3,37 @@ package org.acme.messages;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Message {
-    @JsonProperty("key")
-    private String key;
+    @JsonProperty("id")
+    private String id;
 
-    @JsonProperty("value")
-    private String value;
+    @JsonProperty("content")
+    private String content;
 
     public Message() {}
 
-    public Message(String key, String value) {
-        this.key = key;
-        this.value = value;
+    public Message(String id, String content) {
+        this.id = id;
+        this.content = content;
     }
 
-    public String getKey() {
-        return key;
+    public String getId() {
+        return id;
     }
 
-    public void setKey(String key) {
-        this.key = key;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getValue() {
-        return value;
+    public String getContent() {
+        return content;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    @Override
+    public String toString() {
+        return "Message{" + "id='" + id + '\'' + ", content='" + content + '\'' + '}';
     }
 }
